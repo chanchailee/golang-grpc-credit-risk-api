@@ -19,10 +19,12 @@ import (
 	"github.com/chanchailee/golang-grpc-credit-risk-api/pkg/mockrecords"
 )
 
-func main() {
-	filename := "../mock-fico-records.csv"
-	size := 50
+var (
+	filename = "../mock-fico-records.csv"
+	size     = 50
+)
 
+func main() {
 	err := mockrecords.Generate(size, filename)
 	if err != nil {
 		log.Fatalf("error: can't generate csv file %+v", err)
