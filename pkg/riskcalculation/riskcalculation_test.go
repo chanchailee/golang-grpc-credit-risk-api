@@ -1,11 +1,26 @@
 package riskcalculation_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/chanchailee/golang-grpc-credit-risk-api/pkg/riskcalculation"
 	"github.com/stretchr/testify/assert"
 )
+
+func ExampleCalFICOScore() {
+	input := map[string]float64{
+		"payment_history":          0.1,
+		"amount_owned":             0.1,
+		"length_of_credit_history": 0.5,
+		"new_credit":               1.0,
+		"type_of_credit":           0.7,
+	}
+
+	score := riskcalculation.CalFICOScore(input)
+
+	fmt.Printf("%+v", score)
+}
 
 func TestCalFICOScore(t *testing.T) {
 	input := map[float64]map[string]float64{
