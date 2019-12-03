@@ -12,18 +12,6 @@ var riskFactorWeight = map[string]float64{
 
 // CalFICOScore function is used to calculate FICO Score by using weight mean formula.
 // It receives 	map[string]float64 	as a parameter and return a score as a float64 with 2 decimals.
-//
-// Example:
-//		input := map[string]float64{
-//			"payment_history":          0.1,
-//			"amount_owned":             0.1,
-//			"length_of_credit_history": 0.5,
-//			"new_credit":               1.0,
-//			"type_of_credit":           0.7,
-//
-//		}
-//
-//		score :=  riskcalculation.CalFICOScore(input)
 func CalFICOScore(input map[string]float64) float64 {
 	var ficoScore float64
 
